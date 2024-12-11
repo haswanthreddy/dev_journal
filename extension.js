@@ -20,8 +20,12 @@ function activate(context) {
 	const disposable = vscode.commands.registerCommand('dev-journal.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
 
+		const loggingFrequency = vscode.workspace.getConfiguration("devJournal").get("loggingFrequency");
+
+		console.log(loggingFrequency)
+
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Dev Journal!');
+		vscode.window.showInformationMessage(loggingFrequency);
 	});
 
 	context.subscriptions.push(disposable);

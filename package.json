@@ -15,7 +15,18 @@
     "commands": [{
       "command": "dev-journal.helloWorld",
       "title": "Hello World"
-    }]
+    }],
+    "configuration": {
+      "type": "object",
+      "title": "Dev Journal Settings",
+      "properties": {
+        "devJournal.loggingFrequency": {
+          "type": "integer",
+          "default": 1,
+          "description": "Set how often do you want to log your activity"
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
